@@ -1,11 +1,12 @@
 public class Animal {
-  private String name;
-  private int age;
+    private String name;
+    private int age;
 
-  public Animal(String name, int age) {
-    this.name = name;
-    this.age = age;
-  }
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public String getName() {
         return name;
     }
@@ -18,23 +19,26 @@ public class Animal {
         return age;
     }
 
-    public void setAge(int age){
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public void whoAmI(){
-        System.out.println("I am an animal "+ getName() + "\nMy age Is "+ getAge());
+    public void whoAmI() {
+        System.out.println("I am an animal " + getName() + "\nMy age Is " + getAge());
     }
 
     public boolean equals(Object obj) {
-     if(this==obj) {
-       return true;
-     }
-     if (obj == null || this.getClass() != obj.getClass()) {
-       return false;
-     }
+        // controllo delle reference
+        if (this == obj) {
+            return true;
+        }
+        // controllo se obj è null o se appartiene a classi diverse
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+        // casting di obj per accedere ai metodi della classe Animal
         Animal animal = (Animal) obj;
-
+        // controllo se i valori degli attributi sono uguali
         return getName().equals(animal.getName()) && getAge() == animal.getAge();
     }
 }
