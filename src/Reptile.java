@@ -19,7 +19,7 @@ public class Reptile extends Animal {
     }
 
     public boolean equals(Object obj) {
-        // utilizziamo il metodo equals della classe madre per controllare i valori
+        // utilizziamo il metodo equals della classe padre per controllare i valori
         // degli attributi
         if (!(super.equals(obj))) {
             return false;
